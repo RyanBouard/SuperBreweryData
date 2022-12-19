@@ -1,6 +1,6 @@
 import React from 'react'
 import { BreweryType, TypeOfBrewery } from '../loaders/BreweryLoader'
-import '../style/BreweryDetail.css'
+import '../style/BreweryInfos.css'
 
 
 interface Props {
@@ -9,13 +9,16 @@ interface Props {
 
 const BreweryDetail = ({ brewery }: Props) => {
     return (
+        //Affichage des infos
         <div className="BreweryDetail">
             <p className='BreweryDetail--type'>Type : {TypeOfBrewery[brewery.type]}</p>
             <h2 className='BreweryDetail--name'>Nom : {brewery.name}</h2>
             <p className='BreweryDetail--address'> Adresse : {brewery.street}, {brewery.city} {brewery.state} {brewery.postalCode}, {brewery.country}</p>
-            <p className='BreweryDetail--phone'> Numéro de téléphone :  {brewery.phone}</p>
+            {brewery.phone &&
+                <p>Numéro de Téléphone : <a href={`tel:+1${brewery.phone}`} className='BreweryDetail--phone'>{brewery.phone}</a> </p>
+            }
             {brewery.website &&
-                <a className='BreweryDetail--website' href={brewery.website.href}>{brewery.website.hostname}</a>
+                <p>Site Internet : <a className='BreweryDetail--website' href={brewery.website.href}>{brewery.website.hostname}</a></p>
             }
         </div>
     )

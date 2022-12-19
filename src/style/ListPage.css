@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
 }
-.ListPage--buttonWrapper{
+.ListPage--button{
     display: flex;
     align-self: stretch;
     flex-direction: row;
@@ -10,7 +10,7 @@
     margin: 1rem 0;
 }
 
-.ListPage--button{
+.ListPage--item{
     font-size: 1.4rem;
     border: none;
     padding: .5em;
@@ -18,43 +18,8 @@
     background-color: rgba(255, 255, 255, 0.6);
     transition: background-color 0.3s ease;
 
-    &:hover{
-        background-color: rgba(255, 255, 255, 0.8);
-    }
-
-    &:active{
-        background-color: white;
-    }
-
-    &:disabled{
-        opacity: .5;
-        background-color: rgba(255, 255, 255, 0.6);
-    }
-
 }
-.ListPage--items{
+.ListPage--list{
     padding: 0;
     margin: 0;
-}
-
-.ListPage--filter{
-    display: flex;
-    align-self: flex-start;
-    align-items: center;
-    font-size: 1.2rem;
-    border-radius: .5em;
-    margin: 2rem 0 1rem 0;
-    padding-left: 1rem;
-    background-color: rgba(255, 159, 56);
-    overflow: hidden;
-    box-shadow: -.3rem .6rem 3px #00000008;
-    
-    select{
-        padding: 1rem;
-        margin-left: 1rem;
-        background-color: rgb(58, 32, 5);
-        color: white;
-        border: none;
-        font-size: 1.2rem;
-    }
 }

@@ -1,0 +1,17 @@
+.BreweryDetail {
+    display: flex;
+    flex-direction: column;
+
+    padding: 3rem;
+    margin-top: 3rem;
+
+    background-color: rgba(255, 230, 1, 0.507);
+
+}
+
+.BreweryDetail--type {
+    padding: .5rem;
+    background-color: rgb(235, 126, 9);
+}
+
+

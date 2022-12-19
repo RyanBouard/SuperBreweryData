@@ -1,8 +1,6 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import {createBrowserRouter, RouterProvider,} from "react-router-dom";
 import ReactDOMClient from 'react-dom/client';
-import '../style/Index.css'
 import 'react-router-dom'
 import { routes } from './Routes'
 

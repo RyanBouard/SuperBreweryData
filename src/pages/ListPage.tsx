@@ -1,10 +1,10 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { Await, useLoaderData, useNavigate } from 'react-router-dom'
 import { getPaginationURL } from '../helpers/pagination'
 import { BreweryType, TypeOfBrewery } from '../loaders/BreweryLoader'
 import { ToFirstUpperCase } from '../helpers/string'
 import { $enum } from "ts-enum-util";
-import BreweryListItem from '../components/BreweryListItem'
+import BreweryList from '../components/BreweryList'
 
 import '../style/ListPage.css'
 
@@ -14,7 +14,6 @@ const ListPage = () => {
     const { previous, next } = getPaginationURL(window.location.href)
     const navigate = useNavigate()
     const { promise, type } = useLoaderData() as any
-    const map = useRef(null)
 
     const OnSelectedTypeChanged = (event: any) => {
         const select = event.target as HTMLSelectElement
@@ -39,25 +38,20 @@ const ListPage = () => {
                 </select>
             </label>
 
-            <React.Suspense fallback={<p>Loading Brewery list</p>}>
+            <React.Suspense>
                 <Await resolve={promise}>
                     {(breweries: BreweryType[]) => (
                         <>
-                            <div className="ListPage--buttonWrapper">
-                                <button className='ListPage--button' disabled={previous === undefined} onClick={() => { previous && navigate(previous.pathname + previous.search) }}>Previous</button>
-                                <button className='ListPage--button' disabled={breweries.length !== 20} onClick={() => { navigate(next.pathname + next.search) }}>Next</button>
+                            <div className="ListPage--button">
+                                <button className='ListPage--item' disabled={previous === undefined} onClick={() => { previous && navigate(previous.pathname + previous.search) }}>Previous</button>
+                                <button className='ListPage--item' disabled={breweries.length !== 20} onClick={() => { navigate(next.pathname + next.search) }}>Next</button>
                             </div>
 
-                            <ul className='ListPage--items'>
+                            <ul className='ListPage--list'>
                                 {breweries.map((brewery) => (
-                                    <BreweryListItem key={brewery.id} brewery={brewery} />
+                                    <BreweryList key={brewery.id} brewery={brewery} />
                                 ))}
                             </ul>
-
-                            <div className="ListPage--buttonWrapper">
-                                <button className='ListPage--button' disabled={previous === undefined} onClick={() => { previous && navigate(previous.pathname + previous.search) }}>Previous</button>
-                                <button className='ListPage--button' disabled={breweries.length !== 20} onClick={() => { navigate(next.pathname + next.search) }}>Next</button>
-                            </div>
                         </>
                     )}
                 </Await>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Await, useLoaderData } from 'react-router-dom'
-import BreweryDetail from '../components/BreweryDetail'
+import BreweryDetail from '../components/BreweryInfos'
 import { BreweryType } from '../loaders/BreweryLoader'
 
 const DetailPage = () => {

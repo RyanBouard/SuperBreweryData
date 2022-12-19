@@ -3,7 +3,6 @@ import Root from './pages/Root'
 import HomePage from './pages/HomePage'
 import ListPage from './pages/ListPage'
 import DetailPage from './pages/DetailPage'
-import UnknowPage from './pages/UnknowPage'
 import { deferLoadRandomBrewery, deferLoadBreweryById, deferLoadAllBreweries, TypeOfBrewery } from './loaders/BreweryLoader'
 import { parsePagination } from './helpers/pagination'
 import { $enum } from "ts-enum-util"
@@ -29,6 +28,5 @@ export const routes = createRoutesFromElements(
             ({ params }) => deferLoadBreweryById(params.breweryId ?? "")
         } />
 
-        <Route element={<UnknowPage />} path="*" />
     </Route>
 )
