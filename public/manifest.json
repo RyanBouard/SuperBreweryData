@@ -1,0 +1,20 @@
+{
+  "short_name": "Brewery explorer",
+  "name": "Explore breweries and drink",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "beer.webp",
+      "type": "image/webp",
+      "sizes": "380x380"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ff9e38",
+  "background_color": "#ffffff"
+}
