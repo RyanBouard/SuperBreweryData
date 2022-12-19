@@ -1,4 +1,4 @@
-Thomas Dulac, LP CLOUD
+Ryan BOUARD
 # Brewery Project
 
 Ce project utilise la précieuse api : (https://www.openbrewerydb.org)

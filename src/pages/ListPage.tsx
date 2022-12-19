@@ -6,7 +6,7 @@ import { ToFirstUpperCase } from '../helpers/string'
 import { $enum } from "ts-enum-util";
 import BreweryListItem from '../components/BreweryListItem'
 
-import '../style/ListPage.scss'
+import '../style/ListPage.css'
 
 
 
