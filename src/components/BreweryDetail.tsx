@@ -1,6 +1,6 @@
 import React from 'react'
 import { BreweryType, TypeOfBrewery } from '../loaders/BreweryLoader'
-import './BreweryDetail.scss'
+import '../style/BreweryDetail.scss'
 
 
 interface Props {

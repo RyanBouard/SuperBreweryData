@@ -9,13 +9,12 @@ const HomePage = () => {
 
     return (
         <div data-testid="homePage">
-            <React.Suspense fallback={<p>Loading Brewery</p>}>
-                <Await resolve={promise}>
-                    {(randomBrewery: BreweryType) => (
-                        <BreweryDetail brewery={randomBrewery} />
-                    )}
-                </Await>
-            </React.Suspense>
+
+            <Await resolve={promise}>
+                {(randomBrewery: BreweryType) => (
+                    <BreweryDetail brewery={randomBrewery} />
+                 )}
+            </Await>
         </div>
     )
 }

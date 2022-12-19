@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { BreweryType } from "../loaders/BreweryLoader"
-import './BreweryListItem.scss'
+import '../style/BreweryListItem.scss'
 
 interface Props {
     brewery: BreweryType
