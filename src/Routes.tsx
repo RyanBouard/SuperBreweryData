@@ -1,8 +1,8 @@
 import { createRoutesFromElements, Route } from 'react-router-dom'
-import Root from './pages/Root'
-import HomePage from './pages/HomePage'
-import ListPage from './pages/ListPage'
-import DetailPage from './pages/DetailPage'
+import Root from './views/Root'
+import HomePage from './views/HomeView'
+import ListPage from './views/ListView'
+import DetailPage from './views/DetailView'
 import { deferLoadRandomBrewery, deferLoadBreweryById, deferLoadAllBreweries, TypeOfBrewery } from './loaders/BreweryLoader'
 import { parsePagination } from './helpers/pagination'
 import { $enum } from "ts-enum-util"

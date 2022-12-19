@@ -4,7 +4,7 @@ import { getPaginationURL } from '../helpers/pagination'
 import { BreweryType, TypeOfBrewery } from '../loaders/BreweryLoader'
 import { ToFirstUpperCase } from '../helpers/string'
 import { $enum } from "ts-enum-util";
-import BreweryList from '../components/BreweryList'
+import BreweryList from '../controllers/BreweryList'
 
 import '../style/ListPage.css'
 
@@ -28,7 +28,7 @@ const ListPage = () => {
         <div data-testid="listPage" className='ListPage'>
 
             <label className='ListPage--filter'>
-                Type
+                TYPE = 
                 <select name="brewery-type" onChange={OnSelectedTypeChanged} value={type}>
                     {$enum(TypeOfBrewery).map((key) => (
                         <option key={key} value={key}>
@@ -47,7 +47,7 @@ const ListPage = () => {
                                 <button className='ListPage--item' disabled={breweries.length !== 20} onClick={() => { navigate(next.pathname + next.search) }}>Next</button>
                             </div>
 
-                            <ul className='ListPage--list'>
+                            <ul className='ListPage--lis'>
                                 {breweries.map((brewery) => (
                                     <BreweryList key={brewery.id} brewery={brewery} />
                                 ))}
